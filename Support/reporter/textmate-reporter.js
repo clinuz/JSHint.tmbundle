@@ -44,7 +44,7 @@ module.exports = {
 
     Handlebars.registerHelper('fileErrors', function(context, options) {
       var ret = "", file, errors;
-      ;
+
       for(file in context) {
         errors = context[ file ];
         ret = ret + "<li class=\"file\">" +
@@ -53,8 +53,8 @@ module.exports = {
             // "<pre></pre>" +
           // "</a>" +
           "</li>";
-      ;    //
-        errors.forEach(function (item) { ret = ret + options.fn(item, {data: data}); } );
+
+          errors.forEach(function (item) { ret = ret + options.fn(item, {data: data}); } );
       }
 
       return ret;
