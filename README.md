@@ -1,11 +1,19 @@
 JSHint.tmbundle
 ===============
 
-This is node.js port of Rondevera's wonderful [JSLint Mate][jslintmate]
+This is node.js port of Rondevera's wonderful [JSLint Mate][jslintmate]. As [JSHint][jshint] is [dropping support for JSC in v1.0.0][jshint1] and requiring it to be run from node, this bundle is requiring only Node.js to run.
 
 [jslintmate]: https://github.com/rondevera/jslintmate
+[jshint]: http://www.jshint.com
+[jshint1]: http://www.jshint.com/blog/2012-12-29/1-0-0-rc1/
 
 ### TextMate 2 ###
+
+**Requirements:** 
+
+- [Node.js][nodejs] (tested with v0.8.16)
+
+[nodejs]: http://www.nodejs.org
 
 **Installation:** While TextMate 2 is in development, installation is
 [temporarily a bit more involved][textmate 2 bundles]:
