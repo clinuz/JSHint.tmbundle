@@ -55,7 +55,7 @@ module.exports = {
 
           errors.forEach(function (item) { ret = ret + options.fn(item, {data: data}); } );
       }
-
+      ;;;
       return ret;
     });
 
@@ -64,7 +64,7 @@ module.exports = {
     var content = fs.readFileSync('./views/report.html', 'utf8');
     var template = Handlebars.compile(content);
 
-    var html_content = template({errors: errors, lintOK: (len === 0),  style: style, script: script});
+    var html_content = template({errors: errors, numErrors: len,  style: style, script: script});
 
     process.stdout.write(html_content);
 	}

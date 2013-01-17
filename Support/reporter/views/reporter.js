@@ -217,7 +217,7 @@ window.jslm = (function(w, d) {
 
     if (cur) {
       next = $qs('ul.problems li.' + nav.CUR + ' + li:not(.alert,.file)');
-      alert('next');
+      // alert('next');
 
       if (next) {
         next.className = nav.CUR;
@@ -227,7 +227,7 @@ window.jslm = (function(w, d) {
 
       nav.scrollToShowElement(cur);
     } else {
-      alert('none');
+      // alert('none');
       nav.highlightFirst();
     }
   };

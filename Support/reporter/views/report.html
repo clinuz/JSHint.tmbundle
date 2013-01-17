@@ -10,10 +10,10 @@
 <body>
   <header>
     <div class="info">
-      {{#if lintOK}}
-        <span class="desc">Lint-free!</span>
+      {{#if numErrors}}
+        <span class="desc">JSHint found {{numErrors}} problems:</span>
       {{else}}
-        <span class="desc">JSHint found problems:</span>
+        <span class="desc">Lint-free!</span>
       {{/if}}
     
       <span class="filepath">{{file}}</span>
@@ -27,18 +27,16 @@
   </header>
 
   
-  {{#if lintOK}}
+  {{#if numErrors}}
+    {{> errorTemplate}}
+  {{else}}
     <div class="results results-success">
       <p class="success">Lint-free!</p>
     </div>
-  {{else}}
-    {{> errorTemplate}}
-
   {{/if}}
     
-
   <script>
-  {{{script}}
+    {{{script}}
   </script>
 </body>
 </html>
