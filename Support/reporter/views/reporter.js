@@ -210,8 +210,8 @@ window.jslm = (function(w, d) {
     } else {
       nav.highlightLast();
     }
-  };;
-  ;
+  };
+
   nav.highlightNext = function() {
     var cur = nav.getHighlighted(), next;
 

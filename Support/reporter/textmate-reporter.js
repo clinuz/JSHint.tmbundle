@@ -55,7 +55,7 @@ module.exports = {
 
           errors.forEach(function (item) { ret = ret + options.fn(item, {data: data}); } );
       }
-      ;;;
+
       return ret;
     });
 
