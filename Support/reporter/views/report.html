@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>JSHint</title>
+  <style>
+  {{{style}}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="info">
+      {{#if lintOK}}
+        <span class="desc">Lint-free!</span>
+      {{else}}
+        <span class="desc">JSHint found problems:</span>
+      {{/if}}
+    
+      <span class="filepath">{{file}}</span>
+    
+      <a href="http://rondevera.github.com/jslintmate/" class="info" title="About JSLintMate 1.4">info</a>
+    </div>
+  <!-- <ul class="notices">
+    <li class="warn">The options file "/.jshintrc" could not be read.</li>
+  </ul> -->
+  
+  </header>
+
+  
+  {{#if lintOK}}
+    <div class="results results-success">
+      <p class="success">Lint-free!</p>
+    </div>
+  {{else}}
+    {{> errorTemplate}}
+
+  {{/if}}
+    
+
+  <script>
+  {{{script}}
+  </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<div class="results results-problems">
+  <ul class="problems">
+    {{#fileErrors errors}}
+    <li>
+      <a href="txmt://open?url=file://{{file}}&line={{line}}&column={{character}}">
+        <span class="location">Line {{line}}</span>
+        <span class="desc">{{reason}}</span>
+        <pre>{{evidence}}</pre>
+      </a>
+    </li>
+    {{/fileErrors}}
+  </ul>
+</div>

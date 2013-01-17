@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/usr/bin/env node
+
+process.chdir(__dirname + '/../Support/jshint');
+require("./../src/cli/cli.js").interpret(process.argv);
+
+console.log( "Hello world")
+</string>
+	<key>input</key>
+	<string>document</string>
+	<key>inputFormat</key>
+	<string>text</string>
+	<key>keyEquivalent</key>
+	<string>~L</string>
+	<key>name</key>
+	<string>JSHint node</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
+	<key>scope</key>
+	<string>source.js - source.json</string>
+	<key>uuid</key>
+	<string>18F9D9F7-AB78-482C-973A-0D1593C42E67</string>
+	<key>version</key>
+	<integer>2</integer>
+</dict>
+</plist>
