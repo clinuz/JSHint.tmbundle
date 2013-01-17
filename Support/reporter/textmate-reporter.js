@@ -25,11 +25,10 @@ module.exports = {
 		opts = opts || {};
 
     // Sort errors by file
-
     var files = sortUnique(results.map(function (item) { return item.file; }));
     var errors = {};
     files.forEach(function (file) {
-      var fileRelative = path.relative('/', file),
+      var fileRelative = path.relative(process.env.TM_PROJECT_DIRECTORY, file),
           fileErrors = results.filter(function (item) { return (item.file === file); });
 
       // fileErrors = fileErrors.filter(function (item) { return (item.error); });
