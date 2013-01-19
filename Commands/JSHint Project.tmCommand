@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
 	<key>command</key>
 	<string>#!/usr/bin/env bash
 
@@ -25,17 +27,23 @@ node index.js --reporter textmate-reporter.js --config "${JSHINT_CONFIG}" "${TM_
 exit 0
 # echo $output
 </string>
+	<key>input</key>
+	<string>selection</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>~L</string>
 	<key>name</key>
 	<string>JSHint Project</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
 	<key>outputFormat</key>
 	<string>html</string>
 	<key>outputLocation</key>
 	<string>newWindow</string>
-	<key>scope</key>
-	<string>source.js</string>
 	<key>uuid</key>
 	<string>73C5F2AE-F361-4CE1-ACE7-6FF0A46B111A</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>

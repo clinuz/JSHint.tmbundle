@@ -10,7 +10,7 @@
           white:    true */
 /*jshint  nomen:    false,
           plusplus: false,
-          white:    false */
+          white:    false  */
 /*global  TextMate */
 
 
@@ -180,10 +180,10 @@ window.jslm = (function(w, d) {
   };
   nav.highlightFirst = function() {
     $qs('ul.problems li:not(.file)').className = nav.CUR;
-    nav.scrollTo(0); // Scroll to top
+    // nav.scrollTo(0); // Scroll to top
   };
   nav.highlightLast = function() {
-    var items = $qsa('ul.problems li:not(.alert,.file)'),
+    var items = $qsa('ul.problems li:not(.file)'),
         cur   = items[items.length - 1];
 
     cur.className = nav.CUR;
@@ -194,7 +194,7 @@ window.jslm = (function(w, d) {
 
     if (cur) {
       // CSS3 can't select a previous sibling, so do this the long way.
-      items = $qsa('ul.problems li:not(.alert,.file)');
+      items = $qsa('ul.problems li:not(.file)');
       i     = items.length;
 
       while (i--) {
@@ -216,8 +216,7 @@ window.jslm = (function(w, d) {
     var cur = nav.getHighlighted(), next;
 
     if (cur) {
-      next = $qs('ul.problems li.' + nav.CUR + ' + li:not(.alert,.file)');
-      // alert('next');
+      next = $qs('ul.problems li.' + nav.CUR + ' + li:not(.file)');
 
       if (next) {
         next.className = nav.CUR;
@@ -227,7 +226,6 @@ window.jslm = (function(w, d) {
 
       nav.scrollToShowElement(cur);
     } else {
-      // alert('none');
       nav.highlightFirst();
     }
   };
@@ -342,7 +340,7 @@ window.jslm = (function(w, d) {
 
   // Set up keyboard shortcuts
   if ($qs('ul.problems')) {
-    d.addEventListener('keydown', function(ev) {
+    d.addEventListener('keydown', function (ev) {
       switch (ev.keyCode) {
         case 13: // enter
           nav.openHighlighted();  ev.preventDefault(); break;

@@ -2,6 +2,11 @@ JSHint.tmbundle
 ===============
 
 
+0.2 (2013-01-18)
+----------------
+* Fixed keyboard shortcut bug. 
+* Fixed JSHint Project command.
+
 0.1 (2013-01-16)
 ----------------
 * Initial release.

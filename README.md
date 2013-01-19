@@ -30,3 +30,9 @@ separate window, run this in Terminal
 ([source][textmate 2 htmlOutputPlacement]):
 
     defaults write com.macromates.TextMate.preview htmlOutputPlacement window
+
+### Configuration ###
+
+**Directories to Ignores**
+
+- Create a `.jshintignores` files at the root of the project with directories to be ignored for the JSHint Project command. For examples, see the `.jshintignores` file in this project.

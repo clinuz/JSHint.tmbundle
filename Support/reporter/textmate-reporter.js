@@ -18,15 +18,22 @@ function sortUnique(arr) {
 }
 
 module.exports = {
-	reporter: function (results, data, opts) {
-		var len = results.length;
-		var str = '';
+  reporter: function (results, data, opts) {
+    var len = results.length,
+        files,
+        errors = {},
+        style = fs.readFileSync('./views/reporter.css', 'utf8'),
+        script = fs.readFileSync('./views/reporter.js', 'utf8'),
+        content = fs.readFileSync('./views/report.html', 'utf8'),
+        reporterErrorTemplate = fs.readFileSync('./views/reporter-error.html', 'utf8'),
+        template,
+        htmlContent;
 
 		opts = opts || {};
 
     // Sort errors by file
-    var files = sortUnique(results.map(function (item) { return item.file; }));
-    var errors = {};
+    files = sortUnique(results.map(function (item) { return item.file; }));
+
     files.forEach(function (file) {
       var fileRelative = path.relative(process.env.TM_PROJECT_DIRECTORY, file),
           fileErrors = results.filter(function (item) { return (item.file === file); });
@@ -37,35 +44,28 @@ module.exports = {
 
     // Load assets
 
-    var style = fs.readFileSync('./views/reporter.css', 'utf8');
-    var script = fs.readFileSync('./views/reporter.js', 'utf8');
-    var reporterErrorTemplate = fs.readFileSync('./views/reporter-error.html', 'utf8');
-
     Handlebars.registerHelper('fileErrors', function(context, options) {
-      var ret = "", file, errors;
+      var ret = "", file, fileErrors;
 
       for(file in context) {
-        errors = context[ file ];
-        ret = ret + "<li class=\"file\">" +
-          // "<a href=\"\">" +
-            "<span class=\"desc\">" + file + "</span>" +
-            // "<pre></pre>" +
-          // "</a>" +
-          "</li>";
+        if (context.hasOwnProperty(file)) {
+          // We are sure that obj[key] belongs to the object and was not inherited.
+          fileErrors = context[ file ];
+          ret = ret + "<li class=\"file\">" +
+                      "<span class=\"desc\">" + file + "</span>" +
+                      "</li>";
 
-          errors.forEach(function (item) { ret = ret + options.fn(item, {data: data}); } );
+          fileErrors.forEach(function (item) { ret = ret + options.fn(item, {data: data}); } );
+        }
       }
-
       return ret;
     });
 
     Handlebars.registerPartial('errorTemplate', reporterErrorTemplate);
 
-    var content = fs.readFileSync('./views/report.html', 'utf8');
-    var template = Handlebars.compile(content);
+    template = Handlebars.compile(content);
+    htmlContent = template({errors: errors, numErrors: len,  style: style, script: script});
 
-    var html_content = template({errors: errors, numErrors: len,  style: style, script: script});
-
-    process.stdout.write(html_content);
+    process.stdout.write(htmlContent);
 	}
 };
