@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Jshint.tmbundle by oost</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/oost/JSHint.tmbundle">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Jshint.tmbundle</h1>
+            <h2></h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/oost/JSHint.tmbundle/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/oost/JSHint.tmbundle/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>JSHint.tmbundle</h1>
+
+<p>This is node.js port of Rondevera's wonderful <a href="https://github.com/rondevera/jslintmate">JSLint Mate</a>. As <a href="http://www.jshint.com">JSHint</a> is <a href="http://www.jshint.com/blog/2012-12-29/1-0-0-rc1/">dropping support for JSC in v1.0.0</a> and requiring it to be run from node, this bundle is requiring only Node.js to run.</p>
+
+<h3>TextMate 2</h3>
+
+<p><strong>Requirements:</strong> </p>
+
+<ul>
+<li>
+<a href="http://www.nodejs.org">Node.js</a> (tested with v0.8.16)</li>
+</ul><p><strong>Installation:</strong> While TextMate 2 is in development, installation is
+[temporarily a bit more involved][textmate 2 bundles]:</p>
+
+<ol>
+<li> Create the bundles path: <code>mkdir -p ~/Library/Application\ Support/Avian/Pristine\ Copy/Bundles/</code>.</li>
+<li> Open the same path: <code>open ~/Library/Application\ Support/Avian/Pristine\ Copy/Bundles/</code>.</li>
+<li> Clone the repository <code>git clone git://github.com/oost/JSHint.tmbundle.git</code>.</li>
+<li> Go to the directory <code>cd JSHint.tmbundle</code>.</li>
+<li> Run <code>make</code>
+</li>
+</ol><p><strong>Display:</strong> In TextMate 2, JSLintMate runs in a panel in the main window,
+rather than in a separate window. To make TextMate 2 open JSLintMate in a
+separate window, run this in Terminal
+([source][textmate 2 htmlOutputPlacement]):</p>
+
+<pre><code>defaults write com.macromates.TextMate.preview htmlOutputPlacement window
+</code></pre>
+
+<h3>Configuration</h3>
+
+<p><strong>Directories to Ignores</strong></p>
+
+<ul>
+<li>Create a <code>.jshintignores</code> files at the root of the project with directories to be ignored for the JSHint Project command. For examples, see the <code>.jshintignores</code> file in this project.</li>
+</ul>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/oost">oost</a> can be found on <a href="https://github.com/oost/JSHint.tmbundle">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
