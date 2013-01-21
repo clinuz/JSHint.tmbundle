@@ -2,9 +2,9 @@
   <ul class="problems">
     {{#fileErrors errors}}
     <li>
-      <a href="txmt://open?url=file://{{file}}&line={{line}}&column={{character}}">
+      <a href="txmt://open?url=file://{{file}}&line={{line}}&column={{column}}">
         <span class="location">Line {{line}}</span>
-        <span class="desc">{{reason}}</span>
+        <span class="desc">{{message}}</span>
         <pre>{{evidence}}</pre>
       </a>
     </li>

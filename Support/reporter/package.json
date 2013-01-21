@@ -3,6 +3,6 @@
 	"version":  "0.2.0",
 	"dependencies": {
 		"handlebars": "*",
-    "jshint": "https://github.com/jshint/jshint/archive/1.0.0-rc3.tar.gz"
+    "jshint": "https://github.com/jshint/jshint/archive/1.0.0-rc4.tar.gz"
 	}
 }
