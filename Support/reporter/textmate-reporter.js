@@ -82,43 +82,43 @@ module.exports = {
       });
     });
 
-    // console.log(data);
-    data.forEach(function (item) {
-      var fileRelative = path.relative(process.env.TM_PROJECT_DIRECTORY, item.file),
-          globals = item.implieds,
-          unuseds = item.unused;
 
-      // Register the file
-
-      if (!errors[fileRelative]) {
-        errors[fileRelative] = [];
-      }
-
-      if (globals) {
-        globals.forEach(function (global) {
-          errors[fileRelative].push({
-            file: item.file,
-            severity: 'warning',
-            line: global.line,
-            column: 0,
-            message: "Implied global '" + global.name + "'",
-            source: 'jshint.implied-globals'
-          });
-        });
-      }
-      if (unuseds) {
-        unuseds.forEach(function (unused) {
-          errors[fileRelative].push({
-            file: item.file,
-            severity: 'warning',
-            line: unused.line,
-            column: 0,
-            message: "Unused variable: '" + unused.name + "'",
-            source: 'jshint.implied-unuseds'
-          });
-        });
-      }
-    });
+    // data.forEach(function (item) {
+    //   var fileRelative = path.relative(process.env.TM_PROJECT_DIRECTORY, item.file),
+    //       globals = item.implieds,
+    //       unuseds = item.unused;
+    // 
+    //   // Register the file
+    // 
+    //   if (!errors[fileRelative]) {
+    //     errors[fileRelative] = [];
+    //   }
+    // 
+    //   if (globals) {
+    //     globals.forEach(function (global) {
+    //       errors[fileRelative].push({
+    //         file: item.file,
+    //         severity: 'warning',
+    //         line: global.line,
+    //         column: 0,
+    //         message: "Implied global '" + global.name + "'",
+    //         source: 'jshint.implied-globals'
+    //       });
+    //     });
+    //   }
+    //   if (unuseds) {
+    //     unuseds.forEach(function (unused) {
+    //       errors[fileRelative].push({
+    //         file: item.file,
+    //         severity: 'warning',
+    //         line: unused.line,
+    //         column: 0,
+    //         message: "Unused variable: '" + unused.name + "'",
+    //         source: 'jshint.implied-unuseds'
+    //       });
+    //     });
+    //   }
+    // });
 
     // console.log
     render(errors, numErrors);

@@ -7,13 +7,15 @@ This is node.js port of Rondevera's wonderful [JSLint Mate][jslintmate]. As [JSH
 [jshint]: http://www.jshint.com
 [jshint1]: http://www.jshint.com/blog/2012-12-29/1-0-0-rc1/
 
-### TextMate 2 ###
+### Installation ###
 
 **Requirements:** 
 
 - [Node.js][nodejs] (tested with v0.8.16)
+- [TextMate 2][textmate] 
 
 [nodejs]: http://www.nodejs.org
+[textmate]: https://github.com/textmate/textmate
 
 **Installation:** While TextMate 2 is in development, installation is
 [temporarily a bit more involved][textmate 2 bundles]:
@@ -31,8 +33,16 @@ separate window, run this in Terminal
 
     defaults write com.macromates.TextMate.preview htmlOutputPlacement window
 
+
+[textmate 2 bundles]: http://blog.macromates.com/2011/locating-bundles/
+[textmate 2 htmlOutputPlacement]: http://lists.macromates.com/textmate/2011-December/033616.html
+
 ### Configuration ###
 
 **Directories to Ignores**
 
 - Create a `.jshintignores` files at the root of the project with directories to be ignored for the JSHint Project command. For examples, see the `.jshintignores` file in this project.
+
+**Configuration to apply to the project**
+
+- Create a `.jshintrc` files at the root of the project with JSHint options. For examples, see the `.jshintrc` file in this project.
